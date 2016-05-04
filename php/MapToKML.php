@@ -15,7 +15,7 @@ function GetKMLInfo ($mid,$name) //$name別用中文名稱
 	fwrite($file,$page_content);
 	fclose($file);
 	//解壓縮
-	include('pclzip.lib.php');
+	include_once('pclzip.lib.php');
 	$archive = new PclZip($name.".kmz");
 	if(($list=$archive->extract(PCLZIP_OPT_BY_NAME, 'doc.kml'))==0){
 	    //當有錯誤的時候，可以用這個顯示錯誤訊息
